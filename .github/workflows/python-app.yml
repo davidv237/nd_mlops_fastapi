@@ -48,12 +48,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Configure AWS credentials from Test account
+    - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: arn:aws:iam::111111111111:role/my-github-actions-role-test
-        aws-region: us-east-1
-
-    - name: Copy files to the test website with the AWS CLI
-      run: |
-        aws s3 sync . s3://my-s3-test-website-bucket
+        aws-region: us-east-2
+        role-to-assume: my-github-actions-role
