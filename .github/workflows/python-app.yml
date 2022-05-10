@@ -34,3 +34,29 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+
+  deploy:
+    name: Upload to Amazon S3
+    runs-on: ubuntu-latest
+    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Configure AWS credentials from Test account
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: arn:aws:iam::111111111111:role/my-github-actions-role-test
+        aws-region: fra
+
+    - name: Copy files to the test website with the AWS CLI
+      run: |
+        aws s3 sync . s3://my-s3-test-website-bucket
+
+
+    - name: Copy files to the production website with the AWS CLI
+      run: |
+        aws s3 sync . s3://my-s3-prod-website-bucket
