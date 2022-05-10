@@ -34,6 +34,8 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+    - name: Setup DVC
+      uses: iterative/setup-dvc@v1
 
   deploy:
     name: Upload to Amazon S3
@@ -60,3 +62,7 @@ jobs:
     - name: Copy files to the production website with the AWS CLI
       run: |
         aws s3 sync . s3://my-s3-prod-website-bucket
+
+steps:
+  - uses: actions/checkout@v2
+
