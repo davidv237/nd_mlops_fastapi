@@ -58,7 +58,3 @@ jobs:
         role-external-id: ${{ secrets.AWS_ROLE_EXTERNAL_ID }}
         role-duration-seconds: 1200
         role-session-name: MySessionName
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-region: us-east-2
-
