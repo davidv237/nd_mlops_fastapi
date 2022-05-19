@@ -38,6 +38,7 @@ jobs:
       uses: iterative/setup-dvc@v1
     - name: DVC Pull
       run: |
+        dvc remote add -d myremote s3://nd-mlops-fastapi/dvc/
         dvc pull
 
   deploy:
