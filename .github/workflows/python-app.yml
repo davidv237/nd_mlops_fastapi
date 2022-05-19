@@ -36,6 +36,8 @@ jobs:
         pytest
     - name: Setup DVC
       uses: iterative/setup-dvc@v1
+      run: |
+        dvc pull
 
   deploy:
     name: Upload to Amazon S3
