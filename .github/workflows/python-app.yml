@@ -36,6 +36,7 @@ jobs:
         pytest
     - name: Setup DVC
       uses: iterative/setup-dvc@v1
+    - name: DVC Pull
       run: |
         dvc pull
 
