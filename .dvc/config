@@ -1,9 +1,0 @@
-[core]
-    remote = storage
-    analytics = false
-['remote "localremote"']
-    url = ../local_remote
-['remote "s3remote"']
-    url = s3://nd-mlops-fastapi/dvc/
-['remote "storage"']
-    url = s3://nd-mlops-fastapi/dvc/
