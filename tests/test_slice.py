@@ -18,3 +18,7 @@ def data():
 def test_data_shape(data):
     """ If your data is assumed to have no null values then this is a valid test. """
     assert data.shape == data.dropna().shape, "Dropping null changes shape."
+
+def test_data_shape_2(data):
+    """ If your data is assumed to have no null values then this is a valid test. """
+    assert data.shape == data.dropna().shape, "Dropping null changes shape."
