@@ -43,7 +43,7 @@ jobs:
     - name: DVC Pull
       run: |
         dvc remote add -f -d myremote s3://udacity-nd-ml-devops/dvc
-        dvc pull -o data
+        dvc pull
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
