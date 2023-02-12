@@ -2,6 +2,9 @@ from sklearn.metrics import fbeta_score, precision_score, recall_score
 
 from sklearn.linear_model import LogisticRegression
 
+from sklearn.preprocessing import LabelBinarizer
+import pandas as pd
+import numpy as np
 
 # Optional: implement hyperparameter tuning.
 def train_model(X_train, y_train):
@@ -41,6 +44,15 @@ def compute_model_metrics(y, preds):
     recall : float
     fbeta : float
     """
+
+
+    # Binarize the labels
+    lb = LabelBinarizer()
+    binarized = lb.fit_transform(y)
+
+    # Convert the binarized labels to a numpy array
+    y = np.array(binarized)
+
     fbeta = fbeta_score(y, preds, beta=1, zero_division=1)
     precision = precision_score(y, preds, zero_division=1)
     recall = recall_score(y, preds, zero_division=1)
