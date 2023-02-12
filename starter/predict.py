@@ -10,6 +10,7 @@ from ml.model import train_model, compute_model_metrics, inference
 from ml.data import process_data
 
 import pandas as pd
+import numpy as np
 
 
 # Add code to load in the data.
