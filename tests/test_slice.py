@@ -12,7 +12,9 @@ from starter.ml.data import process_data
 @pytest.fixture
 def data():
     """ Simple function to generate some fake Pandas data."""
-    data = pd.read_csv('data/census.csv')
+    #data = pd.read_csv('data/census.csv')
+    data = pd.read_csv('./data/census.csv')
+
     data.columns = data.columns.str.strip()
     return data
 
