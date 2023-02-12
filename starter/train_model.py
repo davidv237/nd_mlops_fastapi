@@ -13,8 +13,8 @@ import pandas as pd
 # Add code to load in the data.
 
 data = pd.read_csv('data/census.csv')
-X = data.drop(columns=['<=50K'])
-y = data['<=50K']
+#X = data.drop(columns=['Salary'])
+#y = data['Salary']
 
 
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
@@ -36,5 +36,9 @@ X_train, y_train, encoder, lb = process_data(
     )
 
 # Proces the test data with the process_data function.
+X_test, y_test, encoder, lb = process_data(
+    test, categorical_features=cat_features, label="salary", training=True
+    )
 
 # Train and save a model.
+model = train_model(X_train,y_train)
