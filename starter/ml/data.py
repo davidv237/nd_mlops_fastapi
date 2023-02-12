@@ -66,6 +66,7 @@ def process_data(
         filename = 'model/encoder/encoder.joblib'
         encoder = joblib.load(filename)
         X_categorical = encoder.transform(X_categorical)
+        print(type(X_categorical))
         try:
             y = lb.transform(y.values).ravel()
         # Catch the case where y is None because we're doing inference.
