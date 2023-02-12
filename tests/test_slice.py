@@ -12,6 +12,6 @@ def data():
 
 
 def test_data_shape(data):
-    """ Tests if our data has all 107 features and 1 target variable """
-    assert data.shape[1]== 108, "Data does not have the expected shape."
+    """ Tests if our data has all 6513 rows containing 107 features and 1 target variable each"""
+    assert data.shape == (6513, 108), "Data does not have the expected shape."
 
