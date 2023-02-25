@@ -44,10 +44,10 @@ jobs:
       run: |
         dvc remote add -f -d myremote s3://udacity-nd-ml-devops/dvc
         dvc pull
-    - name: Open Web Client Directory
-      working-directory: src/webclient
-      run: |
-        ls -la
+    # - name: Open Web Client Directory
+    #   working-directory: src/webclient
+    #   run: |
+    #     ls -la
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
