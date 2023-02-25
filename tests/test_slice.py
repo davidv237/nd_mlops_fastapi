@@ -8,6 +8,24 @@ from sklearn.linear_model import LogisticRegression
 from starter.ml.data import process_data
 
 
+import os
+
+# Reading environment variable named "ENVIRONMENT_VARIABLE_NAME"
+setting = os.getenv("SETTING")
+
+if setting == "development":
+    print(f"Environment variable value: {setting}")
+    @pytest.fixture
+    def data():
+        """ Simple function to generate some fake Pandas data."""
+        #data = pd.read_csv('data/census.csv')
+        data = pd.read_csv('./data/census.csv')
+
+        data.columns = data.columns.str.strip()
+        return data
+else:
+    print("Environment variable not set.")
+
 
 @pytest.fixture
 def data():
