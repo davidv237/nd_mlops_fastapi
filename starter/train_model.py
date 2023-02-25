@@ -14,11 +14,18 @@ import pandas as pd
 # Add code to load in the data.
 
 data = pd.read_csv('data/census.csv')
+print("data.shape")
+print(data.shape)
 data.columns = data.columns.str.strip()
 
 
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
 train, test = train_test_split(data, test_size=0.20)
+print("train.shape")
+print(train.shape)
+
+print("test.shape")
+print(test.shape)
 
 cat_features = [
     "workclass",
@@ -36,7 +43,17 @@ X_train, y_train, encoder, lb = process_data(
     train, categorical_features=cat_features, label="salary", training=True
     )
 
+print("X_train.shape")
 print(X_train.shape)
+
+print("X_train")
+print(X_train.shape)
+
+print("y_train.shape")
+print(y_train.shape)
+
+print("y_train")
+print(y_train)
 
 # Train and save a model.
 print('Training model ...')
