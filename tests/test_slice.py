@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import pytest
 import joblib
+import subprocess
 from starter.ml.model import train_model, compute_model_metrics, inference
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.linear_model import LogisticRegression
@@ -28,6 +29,8 @@ else:
 
     @pytest.fixture
     def data():
+        dvc_cache_dir = subprocess.check_output(["dvc", "cache", "dir", "--show"]).decode().strip()
+        print(dvc_cache_dir)
         data_path = os.path.join(dvc_cache_dir, 'data.csv')
         assert os.path.isfile(data_path)
     # Add more tests here...
