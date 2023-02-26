@@ -43,7 +43,7 @@ jobs:
     - name: DVC Pull
       run: |
         dvc remote add -f -d myremote s3://udacity-nd-ml-devops/dvc
-        dvc pull data
+        dvc pull
         ls
 
     - name: Lint with flake8
