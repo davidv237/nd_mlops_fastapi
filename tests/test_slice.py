@@ -29,14 +29,13 @@ else:
 
     @pytest.fixture
     def data():
-        data_path = os.path.join("data", "census.csv")
-        # dvc_cache_dir = subprocess.check_output(["dvc", "cache", "dir", "--show"]).decode().strip()
-        print(data_path)
-        # List all the files in the cache directory
-        files = os.listdir(data_path)
+        # Get the current working directory
+        cwd = os.getcwd()
+        print("Current working directory:", cwd)
 
-        # Print the list of files
-        print("Files in DVC cache directory:")
+        # List all files in the current directory
+        files = os.listdir(cwd)
+        print("Files in the current directory:")
         for file in files:
             print(file)
 
