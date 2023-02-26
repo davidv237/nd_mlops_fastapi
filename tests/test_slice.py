@@ -31,6 +31,15 @@ else:
     def data():
         dvc_cache_dir = subprocess.check_output(["dvc", "cache", "dir", "--show"]).decode().strip()
         print(dvc_cache_dir)
+        # List all the files in the cache directory
+        files = os.listdir(dvc_cache_dir)
+
+        # Print the list of files
+        print("Files in DVC cache directory:")
+        for file in files:
+            print(file)
+
+
 
          # Test that the data file exists in the cache directory
         data_file_path = os.path.join(dvc_cache_dir, "data/census.csv")
