@@ -33,7 +33,7 @@ else:
         print(dvc_cache_dir)
 
          # Test that the data file exists in the cache directory
-        data_file_path = os.path.join(dvc_cache_dir, "census.csv")
+        data_file_path = os.path.join(dvc_cache_dir, "data/census.csv")
         assert os.path.isfile(data_file_path), f"Data file {data_file_path} not found"
 
     # Add more tests here...
