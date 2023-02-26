@@ -25,7 +25,12 @@ if setting == "development":
         return data
 else:
     print("Environment variable not set.")
+
     @pytest.fixture
+    def data():
+        data_path = os.path.join(dvc_cache_dir, 'data.csv')
+        assert os.path.isfile(data_path)
+    # Add more tests here...
     # def data():
     #     """ Simple function to generate some fake Pandas data."""
     #     #data = pd.read_csv('data/census.csv')
@@ -33,8 +38,6 @@ else:
 
     #     data.columns = data.columns.str.strip()
     #     return data
-
-
 
 
 @pytest.fixture
