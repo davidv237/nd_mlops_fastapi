@@ -31,8 +31,11 @@ else:
     def data():
         dvc_cache_dir = subprocess.check_output(["dvc", "cache", "dir", "--show"]).decode().strip()
         print(dvc_cache_dir)
-        data_path = os.path.join(dvc_cache_dir, 'data.csv')
-        assert os.path.isfile(data_path)
+
+         # Test that the data file exists in the cache directory
+        data_file_path = os.path.join(dvc_cache_dir, "census.csv")
+        assert os.path.isfile(data_file_path), f"Data file {data_file_path} not found"
+
     # Add more tests here...
     # def data():
     #     """ Simple function to generate some fake Pandas data."""
