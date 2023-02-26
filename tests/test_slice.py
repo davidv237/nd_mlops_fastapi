@@ -46,7 +46,7 @@ else:
         for file in files:
             print(file)
 
-        data = pd.read_csv('data/census.csv.dvc')
+        data = pd.read_csv('data/census.csv')
         return data
 
 

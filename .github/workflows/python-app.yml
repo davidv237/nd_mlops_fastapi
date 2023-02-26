@@ -42,7 +42,7 @@ jobs:
       uses: iterative/setup-dvc@v1
     - name: DVC Pull
       run: |
-        dvc remote add -f -d myremote s3://udacity-nd-ml-devops/dvc
+        dvc remote add -f -d myremote s3://udacity-nd-ml-devops/
         dvc pull
         ls
 
