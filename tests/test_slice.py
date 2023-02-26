@@ -29,10 +29,11 @@ else:
 
     @pytest.fixture
     def data():
-        dvc_cache_dir = subprocess.check_output(["dvc", "cache", "dir", "--show"]).decode().strip()
-        print(dvc_cache_dir)
+        data_path = os.path.join(os.environ["DVC_CACHE_DIR"], "my-cache-dir", "data.csv")
+        # dvc_cache_dir = subprocess.check_output(["dvc", "cache", "dir", "--show"]).decode().strip()
+        print(data_path)
         # List all the files in the cache directory
-        files = os.listdir(dvc_cache_dir)
+        files = os.listdir(data_path)
 
         # Print the list of files
         print("Files in DVC cache directory:")
