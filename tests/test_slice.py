@@ -46,8 +46,8 @@ else:
         for file in files:
             print(file)
 
-        data = pd.read_csv('./data/census.csv')
-
+        data = pd.read_csv('data/census.csv.dvc')
+        return data
 
 
          # Test that the data file exists in the cache directory
