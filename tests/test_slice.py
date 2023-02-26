@@ -39,6 +39,12 @@ else:
         for file in files:
             print(file)
 
+        data_file_path = os.path.join(cwd ".dvc")
+
+        files = os.listdir(data_file_path)
+        print("Files in the current directory:")
+        for file in files:
+            print(file)
 
 
          # Test that the data file exists in the cache directory
