@@ -45,7 +45,6 @@ jobs:
         dvc remote add -f -d myremote s3://udacity-nd-ml-devops/dvc
         dvc cache dir s3://udacity-nd-ml-devops/dvc
         dvc pull
-        dvc cache dir --show
     # - name: Open Web Client Directory
     #   working-directory: src/webclient
     #   run: |
