@@ -29,7 +29,7 @@ else:
 
     @pytest.fixture
     def data():
-        data_path = os.path.join(os.environ["DVC_CACHE_DIR"], "data", "census.csv")
+        data_path = os.path.join("data", "census.csv")
         # dvc_cache_dir = subprocess.check_output(["dvc", "cache", "dir", "--show"]).decode().strip()
         print(data_path)
         # List all the files in the cache directory
